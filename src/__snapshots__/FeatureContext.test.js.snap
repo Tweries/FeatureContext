@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FeatureContext DANGER_V1 active 1`] = `
+<div>
+  <span>
+    Oh Noes!
+  </span>
+</div>
+`;
+
+exports[`FeatureContext SUCCESS_V1 active 1`] = `
+<div>
+  <span>
+    YATTA
+  </span>
+</div>
+`;
+
+exports[`FeatureContext UNKNOWN_V1 active 1`] = `
+<div>
+  <span
+    aria-label="man-shrugging"
+    role="img"
+  >
+    🤷‍♂
+  </span>
+</div>
+`;
+
+exports[`FeatureContext empty array 1`] = `
+<div>
+  <span
+    aria-label="man-shrugging"
+    role="img"
+  >
+    🤷‍♂
+  </span>
+</div>
+`;
+
+exports[`FeatureContext when "null" then it should throw 1`] = `"the \\"features\\" argument must be an array"`;
+
+exports[`FeatureContext when "undefined" then it should throw 1`] = `"the \\"features\\" argument must be an array"`;
