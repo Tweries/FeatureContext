@@ -1,7 +1,7 @@
-# FeatureContext
+# FeatureProvider
 
-FeatureContext
+FeatureProvider
 
 ## How to
 
-[src/FeatureContext.test.js](src/FeatureContext.test.js)
+[src/FeatureProvider.test.js](src/FeatureProvider.test.js)

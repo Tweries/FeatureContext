@@ -1,8 +1,8 @@
 import { render } from '@testing-library/react';
 import React from 'react';
-import FeatureContext, { setFeatures, useFeature } from './FeatureContext';
+import FeatureProvider, { setFeatures, useFeature } from './FeatureProvider';
 
-describe('FeatureContext', () => {
+describe('FeatureProvider', () => {
   const DANGER_V1 = 'DANGER_V1';
   const SUCCESS_V1 = 'SUCCESS_V1';
   const UNKNOWN_V1 = 'UNKNOWN_V1';
@@ -25,28 +25,29 @@ describe('FeatureContext', () => {
   const scenarios = [
     {
       description: `${DANGER_V1} active`,
-      feature: setFeatures([DANGER_V1])
+      features: [DANGER_V1]
     },
     {
       description: `${SUCCESS_V1} active`,
-      feature: setFeatures([SUCCESS_V1])
+      feature: setFeatures([SUCCESS_V1]),
+      features: [SUCCESS_V1]
     },
     {
       description: `${UNKNOWN_V1} active`,
-      feature: setFeatures([UNKNOWN_V1])
+      features: [UNKNOWN_V1]
     },
     {
       description: 'empty array',
-      feature: setFeatures([])
+      features: []
     }
   ];
 
-  scenarios.forEach(({ description, feature }) => {
+  scenarios.forEach(({ description, features }) => {
     it(description, () => {
       const { container } = render(
-        <FeatureContext.Provider value={feature}>
+        <FeatureProvider features={features}>
           <Message />
-        </FeatureContext.Provider>
+        </FeatureProvider>
       );
 
       expect(container).toMatchSnapshot();
@@ -56,9 +57,9 @@ describe('FeatureContext', () => {
   it('when "null" then it should throw', () => {
     expect(() => {
       render(
-        <FeatureContext.Provider value={setFeatures(null)}>
+        <FeatureProvider features={null}>
           <Message />
-        </FeatureContext.Provider>
+        </FeatureProvider>
       );
     }).toThrowErrorMatchingSnapshot();
   });
@@ -66,9 +67,9 @@ describe('FeatureContext', () => {
   it('when "undefined" then it should throw', () => {
     expect(() => {
       render(
-        <FeatureContext.Provider value={setFeatures()}>
+        <FeatureProvider>
           <Message />
-        </FeatureContext.Provider>
+        </FeatureProvider>
       );
     }).toThrowErrorMatchingSnapshot();
   });
