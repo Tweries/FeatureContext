@@ -1,6 +1,6 @@
 {
-  "name": "@tweries/feature-provider",
-  "version": "0.2.0",
+  "name": "feature-provider",
+  "version": "0.2.1",
   "description": "FeatureProvider",
   "main": "src/FeatureProvider.js",
   "module": "lib/FeatureProvider.js",
