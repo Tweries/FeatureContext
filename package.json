@@ -1,8 +1,8 @@
 {
   "name": "feature-provider",
-  "version": "0.2.1",
+  "version": "0.2.3",
   "description": "FeatureProvider",
-  "main": "src/FeatureProvider.js",
+  "main": "lib/FeatureProvider.js",
   "module": "lib/FeatureProvider.js",
   "scripts": {
     "build": "babel src --out-dir lib",
