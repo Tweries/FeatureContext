@@ -2,7 +2,7 @@
   "name": "@tweries/feature-provider",
   "version": "0.2.0",
   "description": "FeatureProvider",
-  "main": "lib/FeatureProvider.js",
+  "main": "src/FeatureProvider.js",
   "module": "lib/FeatureProvider.js",
   "scripts": {
     "build": "babel src --out-dir lib",
